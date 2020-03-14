@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component
+      :is="rickRoll.type"
+      v-for="rickRoll in rickRolls"
+      :key="rickRoll.id"
+      :data="rickRoll"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import { mapState } from 'vuex';
+import Video from '../components/Video.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    Video,
   },
+  computed: mapState(['rickRolls']),
 };
 </script>
+
+<style scoped>
+.home {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+</style>

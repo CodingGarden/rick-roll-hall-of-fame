@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <h1 class="title">Coding Garden Rick Roll Hall of Fame</h1>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Share Tech', sans-serif;
+  background: black;
+  color: white;
+  font-size: 1.5rem;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#app {
+  width: 100%;
+  height: 100%;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.title {
+  text-align: center;
+}
+
+a {
+  color: #b8b8f3;
 }
 </style>
