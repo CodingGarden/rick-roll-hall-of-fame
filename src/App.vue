@@ -20,11 +20,13 @@ body {
   background: black;
   color: white;
   font-size: 1.5rem;
+  cursor: url(assets/cursor.png), auto;
 }
 
 #app {
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 
 .title {
