@@ -1,6 +1,17 @@
 <template>
   <div class="info">
-    <p>Rick Roller: <span class="value"><a :href="data.author.url">{{data.author.username}}</a></span></p>
+    <p v-if="Array.isArray(data.author)">Rick Rollers:
+      <span class="value">
+      <template v-for="(author, index) in data.author">
+        <a :key="author.username" :href="author.url">{{author.username}}</a>{{index===data.author.length-1?'':', '}}
+      </template>
+      </span>
+    </p>
+    <p v-else>Rick Roller:
+      <span class="value">
+        <a :href="data.author.url">{{data.author.username}}</a>
+      </span>
+    </p>
     <p><a :href="data.originalUrl">Live Stream Link</a></p>
     <p>Date: <span class="value">{{data.date.toLocaleDateString()}}</span></p>
   </div>
